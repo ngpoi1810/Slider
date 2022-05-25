@@ -1,0 +1,193 @@
+*{margin: 0;padding: 0}
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+.chuyenslide {
+    text-align: center;
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+
+.chuyenslide ul {
+    display: inline;
+}
+
+.chuyenslide ul li {
+    text-indent: -9999px;
+    display: inline-block;
+    border: 1px solid gray;
+    width: 20px;
+    height: 20px;
+    border-radius: 30px;
+    margin: 20px 10px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.chuyenslide ul li:hover, 
+.chuyenslide ul li.kichhoat{
+    background: #4d4b4b;
+}
+/* Css cho pháº§n slide */
+.slidewrapper{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+.cacslide{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+
+}
+.cacslide ul{
+	height: 100%;
+	position: relative;
+}
+.cacslide ul li{
+	list-style: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transition: 0.4s;
+	opacity: 0;
+}
+.cacslide ul li.active{
+	opacity: 1;
+}
+.cacslide ul li .motslide{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.motslide .anh{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+
+}
+.motslide .xanhduoi1,
+.motslide .xanhduoi2,
+.motslide .xanhtren1,
+.motslide .textnd{
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	opacity: 0;
+}
+.textnd h2{
+    font-size: 65px;
+    opacity: 0;
+}
+.textnd small{
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    padding: 10px 0 15px 0;
+    opacity: 0;
+}
+.textnd .ke{
+    width: 165px;
+    height: 2px;
+    background: #ffffffb0;
+    margin-bottom: 10px;
+    opacity: 0;
+}
+.textnd p{
+    font-size: 14px;
+    line-height: 20px;
+    color: #aba8a8;
+    opacity: 0;
+}
+.textnd .nut{
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    display: inline-block;
+    text-transform: uppercase;
+    opacity: 0;
+}
+ul li.active .textnd h2,
+ul li.active .textnd small,
+ul li.active .textnd .ke,
+ul li.active .textnd p,
+ul li.active .textnd .nut{
+	animation: chuyendongnd 1s forwards;
+}
+@-webkit-keyframes chuyendongnd{
+	from{
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+	to{
+		transform: translateX(-0px);
+		opacity: 1;
+	}
+}
+ul li.active .textnd h2{animation-delay: 0.4s}
+ul li.active .textnd small{animation-delay: 0.5s}
+ul li.active .textnd .ke{animation-delay: 0.6s}
+ul li.active .textnd p{animation-delay: 0.7s}
+ul li.active .textnd .nut{animation-delay: 0.8s}
+.motslide .xanhduoi1 {
+    opacity: 0;
+    top: -93%;
+}
+.motslide .xanhduoi2 {
+    opacity: 0;
+    top: -36%;
+}
+ul li.active .motslide .xanhduoi1,
+ul li.active .motslide .xanhduoi2{
+	animation: xanhvao 1s forwards;
+}
+@-webkit-keyframes xanhvao{
+	from{
+		transform: translateX(-100%) translateY(100%);
+		opacity: 0;
+	}
+	to{
+		transform: translateX(0) translateY(0);
+		opacity: 0.4;
+	}
+}
+ul li.active .motslide .xanhduoi2{
+	animation-delay: 0.5s;
+}
+
+.motslide .textnd {
+    width: 23%;
+    left: 3%;
+    z-index: 3;
+    opacity: 1;
+    top: 40%;
+    color: white;
+}
+
+.motslide .xanhtren1 {
+    opacity: 0;
+    right: -119px;
+}
+ul li.active .motslide .xanhtren1{
+	animation: xanhtren 1s forwards;
+}
+@-webkit-keyframes xanhtren{
+	from{
+		transform: translateX(100%) translateY(-100%);
+		opacity: 0;
+	}
+	to{
+		transform: translateX(0) translateY(0);
+		opacity: 0.4;
+	}
+}
+
